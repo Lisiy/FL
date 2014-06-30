@@ -12,11 +12,8 @@
         android:id="@+id/FlashToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="78dp"
-        android:layout_marginTop="84dp"
-        android:onClick="ToggleFlash"
-        android:text="FlashToggle" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="ToggleFlash" />
 
 </RelativeLayout>

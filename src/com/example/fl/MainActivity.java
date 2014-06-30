@@ -1,12 +1,15 @@
 package com.example.fl;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.Fragment;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ToggleButton;
 
 
@@ -50,7 +53,6 @@ public class MainActivity extends ActionBarActivity {
     	cam.setParameters(p);
     	cam.startPreview();
     }
-
 
 
 }
