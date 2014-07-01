@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.flash.MainActivity$PlaceholderFragment" >
+    tools:context="com.example.fl.MainActivity$PlaceholderFragment" >
 
     <ToggleButton
         android:id="@+id/FlashToggle"
@@ -14,6 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:onClick="ToggleFlash" />
+        android:onClick="ToggleFlash"
+        android:textOff="FlashLight OFF"
+        android:textOn="FlashLight ON" />
 
 </RelativeLayout>
