@@ -4,5 +4,11 @@
     <string name="app_name">FL</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="ClickOnShowAds">ClickOnShowAds</string>
+    <string name="ShowAdsTitle">Show Ads</string>
+    <string name="ShowAdsOnPreference">This checkbox will show or hide ads</string>
+    <string name="AboutPreference">This application is free to use! v0.0.1!</string>
+    <string name="value_showads_preference"></string>
+    <string name="about_preference">about_preference</string>
 
 </resources>
