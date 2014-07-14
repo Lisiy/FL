@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.fl.Preferences">
+            android:name="com.example.fl.Preferences"
+            android:parentActivityName="com.example.fl.MainActivity">
         </activity>
     </application>
 
