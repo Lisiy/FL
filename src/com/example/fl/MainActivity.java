@@ -25,11 +25,9 @@ public class MainActivity extends Activity {
         ToggleButton button = (ToggleButton)findViewById(R.id.FlashToggle);
         button.setChecked(true);
         Parameters p = cam.getParameters();
-
+        p.setFlashMode(Parameters.FLASH_MODE_TORCH);
         cam.setParameters(p);
-    	cam.startPreview();
-
-        
+    	cam.startPreview();  
                 }
     
 
@@ -60,9 +58,6 @@ public class MainActivity extends Activity {
     public boolean ClickOnShowAds(MenuItem item) {
 		return false; 
     }
-
-
-    
     
     public void ToggleFlash(View v)
     {
@@ -72,7 +67,6 @@ public class MainActivity extends Activity {
     	{
     		if (!TryOpenCamera()) return;
     		Parameters p = cam.getParameters();
-
     		Log.i("FL", "Button is checked, flashlight on");
     		p.setFlashMode(Parameters.FLASH_MODE_TORCH);
         	cam.setParameters(p);
@@ -85,9 +79,6 @@ public class MainActivity extends Activity {
     		cam.release();
     	}
     }
-    	
-    
-
 
     
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -104,7 +95,6 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-    
+    }    
         
 }
