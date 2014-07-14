@@ -13,15 +13,41 @@ import android.widget.ToggleButton;
 
 public class MainActivity extends Activity {
 
+	Camera cam = null;
+
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (!TryOpenCamera()) return;
+        ToggleButton button = (ToggleButton)findViewById(R.id.FlashToggle);
+        button.setChecked(true);
+        Parameters p = cam.getParameters();
+
+        cam.setParameters(p);
+    	cam.startPreview();
+
+        
                 }
     
 
+    private boolean TryOpenCamera()
+    {
+    	ToggleButton button = (ToggleButton)findViewById(R.id.FlashToggle);
+
+    	try {
+        	cam = Camera.open();
+        	}
+        	catch (RuntimeException e)
+        	{
+        		Log.e("FL", "No camera on the device - can not open camera");
+        		button.setClickable(false);
+        		return false;
+        	}
+    	return true;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -35,29 +61,18 @@ public class MainActivity extends Activity {
 		return false; 
     }
 
+
+    
     
     public void ToggleFlash(View v)
     {
     	ToggleButton button = (ToggleButton)findViewById(R.id.FlashToggle);
-    	Camera cam = null;
-    	try {
-    	cam = Camera.open();
-    	}
-    	catch (RuntimeException e)
+    	  
+        if (button.isChecked())
     	{
-    		Log.e("FL", "No camera on the device - can not open camera");
-    	}
-    	
-        if (cam == null){
-        	Log.e("FL", "No camera on the device");
-        	button.setClickable(false);
-        	return;
-        }
-        Parameters p = cam.getParameters();
-        
-    	
-    	if (button.isChecked())
-    	{
+    		if (!TryOpenCamera()) return;
+    		Parameters p = cam.getParameters();
+
     		Log.i("FL", "Button is checked, flashlight on");
     		p.setFlashMode(Parameters.FLASH_MODE_TORCH);
         	cam.setParameters(p);
@@ -67,10 +82,11 @@ public class MainActivity extends Activity {
     	{
     		Log.i("FL", "Button is not checked, flashlight off");
     		cam.stopPreview();
+    		cam.release();
     	}
-     
-    	
     }
+    	
+    
 
 
     
