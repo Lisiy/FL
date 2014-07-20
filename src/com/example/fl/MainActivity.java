@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             {
-             Intent myIntent = new Intent(this, Preferences.class);
+             Intent myIntent = new Intent(this, PreferencesActivity.class);
              startActivity(myIntent);
             }
 
