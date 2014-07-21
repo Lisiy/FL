@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <CheckBoxPreference android:enabled="true" android:title="@string/ShowAdsTitle" android:summaryOn="@string/ShowAdsOnPreference" android:selectable="true" android:summaryOff="@string/ShowAdsOnPreference" android:key="@string/value_showads_preference"/>
+    <CheckBoxPreference android:enabled="true" android:title="@string/ShowAdsTitle" android:summaryOn="@string/ShowAdsOnPreference" android:selectable="true" android:summaryOff="@string/ShowAdsOnPreference" android:key="key_show_ad_preference"/>
     <Preference android:title="@string/AboutPreference" android:key="@string/about_preference"/>
     
 
